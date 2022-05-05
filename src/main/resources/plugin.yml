@@ -1,11 +1,11 @@
 ## CHANGE this to the name of your plugin.
-name: Tweaks
+name: SlimeTweaks
 
 ## CHANGE this to your username.
 author: NorielSylvire
 
 ## CHANGE this to a meaninful but short description of your plugin.
-description: Tweaks adds and changes SF4 recipes to better include 1.18 materials and recylce waste.
+description: SlimeTweaks adds and changes SF4 recipes to better include 1.18 materials and recylce waste.
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
 main: me.NorielSylvire.slimetweaks.SlimeTweaks

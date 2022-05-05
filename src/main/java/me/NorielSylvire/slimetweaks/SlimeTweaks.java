@@ -1,4 +1,4 @@
-package me.CHANGEME.slimefunaddon;
+package me.norielsylvire.slimetweaks;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -13,7 +13,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
-public class ExampleAddon extends JavaPlugin implements SlimefunAddon {
+public class SlimeTweaks extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
@@ -55,7 +55,7 @@ public class ExampleAddon extends JavaPlugin implements SlimefunAddon {
          * Now you just have to register the item.
          * RecipeType.ENHANCED_CRAFTING_TABLE refers to the machine in
          * which this item is crafted in.
-         * Recipe Types from Slimefun itself will automatically add the recipe to that machine.
+         * Recipe Types from    Slimefun itself will automatically add the recipe to that machine.
          */
         SlimefunItem item = new SlimefunItem(itemGroup, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
         item.register(this);
