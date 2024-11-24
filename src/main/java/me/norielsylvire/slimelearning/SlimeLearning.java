@@ -24,7 +24,32 @@ public class SlimeLearning extends JavaPlugin implements SlimefunAddon {
             // You could start an Auto-Updater for example
         }
 
+		ItemGroup learningCategory = createCategories();
+		registerItems(learningCategory);
+    }
+
+    @Override
+    public void onDisable() {
+        // Logic for disabling the plugin...
+    }
+
+    @Override
+    public String getBugTrackerURL() {
+        // You can return a link to your Bug Tracker instead of null here
+        return null;
+    }
+
+    @Override
+    public JavaPlugin getJavaPlugin() {
         /*
+         * You will need to return a reference to your Plugin here.
+         * If you are using your main class for this, simply return "this".
+         */
+        return this;
+    }
+
+	private ItemGroup createCategories() {
+		/*
          * 1. Creating a new Category
          * This Category will use the following ItemStack
          */
@@ -32,14 +57,16 @@ public class SlimeLearning extends JavaPlugin implements SlimefunAddon {
 
         // Give your Category a unique id.
         NamespacedKey learningGroupId = new NamespacedKey(this, "learning_category");
-        ItemGroup learningCategory = new ItemGroup(learningGroupId, learningCategoryItemStack);
+        return new ItemGroup(learningGroupId, learningCategoryItemStack);
+	}
 
+	private void registerItems(ItemGroup learningCategory) {
         /*
          * 2. Create a new SlimefunItemStack
          * This class has many constructors, it is very important
          * that you give each item a unique id.
          */
-        SlimefunItemStack coolDiamondIS = new SlimefunItemStack("COOL_DIAMOND", Material.DIAMOND, "&4Cool Diamond", "&c+20% Coolness");
+        SlimefunItemStack coolDiamondIS = new SlimefunItemStack("COOL_DIAMOND", Material.DIAMOND, "&6Cool Diamond", "&b+20% Coolness");
 
         /*
          * 3. Creating a Recipe
@@ -63,26 +90,5 @@ public class SlimeLearning extends JavaPlugin implements SlimefunAddon {
          */
         SlimefunItem coolDiamondItem = new SlimefunItem(learningCategory, coolDiamondIS, RecipeType.ENHANCED_CRAFTING_TABLE, coolDiamondRecipe);
         coolDiamondItem.register(this);
-    }
-
-    @Override
-    public void onDisable() {
-        // Logic for disabling the plugin...
-    }
-
-    @Override
-    public String getBugTrackerURL() {
-        // You can return a link to your Bug Tracker instead of null here
-        return null;
-    }
-
-    @Override
-    public JavaPlugin getJavaPlugin() {
-        /*
-         * You will need to return a reference to your Plugin here.
-         * If you are using your main class for this, simply return "this".
-         */
-        return this;
-    }
-
+	}	
 }
